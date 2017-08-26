@@ -9,5 +9,7 @@ myMod.bar(5, 3);
 
 // var makeRequest = require('C:/Users/ADMIN/Desktop/nonProjects/nodeCodeSchool/make_request');
 var makeRequest = require('./make_request'); // easier
+//npm search request
 makeRequest("Hello Ed");
 makeRequest('Hello Will');
+makeRequest('hi');
