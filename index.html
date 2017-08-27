@@ -3,16 +3,26 @@
   <head>
     <meta charset="utf-8">
     <title>hi</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   </head>
   <body>
     <h1>hi Ara</h1>
+<form>
+  <input id="chat_input" type="text" name="" value="">
+  <input id="chat_form" type="submit" name="asdf" value="Submit">
+</form>
+
 
     <script src="/socket.io/socket.io.js"></script>
     <script type="text/javascript"  charset="utf-8">
-    var socket = io.connect('http://127.0.0.1:8080');
-    socket.on('mess', function(data){
-      alert(data.hello);
-    });
+      var socket = io.connect('http://127.0.0.1:8080');
+      // socket.on('mess', function(data){
+      //   alert(data.hello);
+      // });
+      $('#chat_form').submit(function(){
+        var message = $('chat_input').val();
+        socket.emit('messages', message);
+      });
     </script>
   </body>
 </html>
