@@ -31,3 +31,28 @@ app.get('/tweets/:username', (req, res)=>{
   var twitterUrl = url.format(options);
   request(twitterUrl).pipe(res);
 });
+
+
+
+//code from codeSchool exercises
+// var url = require('url');
+//
+// options = {
+//   protocol: "http:",
+//   host: "search.twitter.com",
+//   pathname: "/search.json",
+//   query: {q: "codeschool"}
+// };
+// var searchURL = url.format(options);
+// console.log(searchURL);
+
+// var request = require('request');
+// request(searchURL, function(err, res, bod){
+//   console.log(bod);
+// });
+// var app = express();
+// app.get('/', function(req, res){
+//   request(searchURL).pipe(res);
+// });
+//
+// app.listen(8080);
