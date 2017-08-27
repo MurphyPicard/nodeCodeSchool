@@ -1,0 +1,29 @@
+{
+  "name": "ara-node",
+  "version": "1.0.0",
+  "description": "node practice",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.15.4",
+    "nodemon": "^1.11.0",
+    "request": "^2.81.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "test",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MurphyPicard/nodeCodeSchool.git"
+  },
+  "keywords": [
+    "none"
+  ],
+  "author": "ara",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MurphyPicard/nodeCodeSchool/issues"
+  },
+  "homepage": "https://github.com/MurphyPicard/nodeCodeSchool#readme"
+}
