@@ -14,23 +14,23 @@
 // makeRequest('Hello Will');
 // makeRequest('hi');
 
-var express = require('express');
-var app = express();
-
-var request = require('request')
-var url = require('url')
-
-app.get('/tweets/:username', (req, res)=>{
-  var username = req.params.username;
-  options = {
-    protocol: "http:",
-    host: 'api.twitter.com',
-    pathname: '/1/statuses/user_timeline.json',
-    query: { screen_name: username, count: 10}
-  }
-  var twitterUrl = url.format(options);
-  request(twitterUrl).pipe(res);
-});
+// var express = require('express');
+// var app = express();
+//
+// var request = require('request')
+// var url = require('url')
+//
+// app.get('/tweets/:username', (req, res)=>{
+//   var username = req.params.username;
+//   options = {
+//     protocol: "http:",
+//     host: 'api.twitter.com',
+//     pathname: '/1/statuses/user_timeline.json',
+//     query: { screen_name: username, count: 10}
+//   }
+//   var twitterUrl = url.format(options);
+//   request(twitterUrl).pipe(res);
+// });
 
 
 
@@ -56,3 +56,18 @@ app.get('/tweets/:username', (req, res)=>{
 // });
 //
 // app.listen(8080);
+
+var express = require('express');
+var app = express();
+var server = require('http').createServer(app);
+var io = require('socket.io')(server);
+io.on('connection', function(client){
+  console.log('Client connected...');
+  client.emit('messages', {hello: 'world'});
+});
+app.get('/', function(req, res){
+  res.sendFile(__dirname + '/index.html');
+});
+server.listen(8080, function(){
+  console.log('Ara listening on 8080');
+});

@@ -7,7 +7,8 @@
     "ejs": "^2.5.7",
     "express": "^4.15.4",
     "nodemon": "^1.11.0",
-    "request": "^2.81.0"
+    "request": "^2.81.0",
+    "socket.io": "^2.0.3"
   },
   "devDependencies": {},
   "scripts": {
