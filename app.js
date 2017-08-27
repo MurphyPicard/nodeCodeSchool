@@ -65,7 +65,16 @@ io.on('connection', function(client){
   console.log('Client connected...');
   // client.emit('mess', {hello: 'world'});
   client.on('messages', function(data){
-    console.log(data);
+    client.broadcast.emit('messages', data)
+    if('pickles' == 'pick'){
+      console.log('pickles');
+    }
+    else if(data !== null){
+      console.log("data is not null: ", data);
+    }
+    else if(data == null){
+      console.log("helloasdfasdf: ", data);
+    }
   });
 });
 app.get('/', function(req, res){
